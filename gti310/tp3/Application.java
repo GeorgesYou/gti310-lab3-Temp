@@ -4,6 +4,7 @@ import java.util.List;
 
 import gti310.tp3.parser.ConcreteParser;
 import gti310.tp3.solver.ConcreteSolver;
+import gti310.tp3.writer.ConcreteWriter;
 
 /**
  * The Application class defines a template method to call the elements to
@@ -23,13 +24,6 @@ public class Application {
 	 * @param args The array containing the arguments to the files.
 	 */
 	public static void main(String args[]) {
-		PathList list = new ConcreteSolver().solve(new ConcreteParser().parse("Musee.txt"));
-		for (int i=0;i<list.pathCount();i++)
-		{
-			List<Integer> path = list.getPath(i);
-			for (int j=0;j<path.size();j++)
-				System.out.print(path.get(j)+" -> ");
-			System.out.println();
-		}
+		new ConcreteWriter().write("Sol-Musee.txt", new ConcreteSolver().solve(new ConcreteParser().parse("Musee.txt")));
 	}
 }
