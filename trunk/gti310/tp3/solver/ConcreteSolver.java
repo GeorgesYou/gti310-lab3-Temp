@@ -24,12 +24,12 @@ public class ConcreteSolver implements Solver<Data,PathList> {
 		for (int i=0;i<nodeDone.length;i++)
 			nodeDone[i]=false;
 		
-		redudancy(input, input.getDepart(), new LinkedList<Integer>());
+		recursion(input, input.getDepart(), new LinkedList<Integer>());
 		
 		return list;
 	}
 	
-	private void redudancy(Data data, int node, List<Integer> path)
+	private void recursion(Data data, int node, List<Integer> path)
 	{
 		nodeDone[node-1] = true;
 		path.add(node);		
@@ -37,7 +37,7 @@ public class ConcreteSolver implements Solver<Data,PathList> {
 		for (int i=0;i<links.length;i++)
 		{
 			if (links[i][0]==node && !nodeDone[links[i][1]-1])
-				redudancy(data,links[i][1], path);
+				recursion(data,links[i][1], path);
 			
 			if (links[i][0]==node && links[i][1]==start)
 			{
