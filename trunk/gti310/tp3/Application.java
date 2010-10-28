@@ -24,6 +24,10 @@ public class Application {
 	 * @param args The array containing the arguments to the files.
 	 */
 	public static void main(String args[]) {
-		new ConcreteWriter().write("Sol-Musee.txt", new ConcreteSolver().solve(new ConcreteParser().parse("Musee.txt")));
+		//args = new String[]{"Musee.txt","Sol-Musee.txt"};
+		if (args.length==2)
+			new ConcreteWriter().write(args[1], new ConcreteSolver().solve(new ConcreteParser().parse(args[0])));
+		else
+			System.out.println("Please enter the 2 files name");
 	}
 }
