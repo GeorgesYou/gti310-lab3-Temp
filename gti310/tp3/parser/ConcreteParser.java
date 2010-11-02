@@ -53,7 +53,10 @@ public class ConcreteParser implements Parser<Data> {
             	if (line!="$")
             	for (int i=0; makeMatch.find(); i++) 
             	{
-            		array[lineNum][i] = Integer.parseInt(makeMatch.group(0));
+            		if (i<3)
+            			array[lineNum][i] = Integer.parseInt(makeMatch.group(0));
+            		else
+            			error();
             	}
             	lineNum++;
             }
