@@ -1,3 +1,19 @@
+/******************************************************
+ Laboratoire #3 : Résolution de graph
+ 
+ Cours :             GTI310
+ Session :           Automne 2010
+ Groupe :            01
+ Projet :            Laboratoire #3
+ Étudiant(e)(s) :    Gabriel Desmarais
+ 					 Marie-Ève Benoit
+ Code(s) perm. :     DESG24078908
+ 					 BENM22568707
+ Chargée de lab. :   Jean-François Franche 
+ Nom du fichier :    ConcreteParser.java
+ Date crée :         2010-11-09
+ Date dern. modif.   2010-11-09
+ *******************************************************/
 package gti310.tp3.parser;
 
 import gti310.tp3.Data;
@@ -15,6 +31,10 @@ public class ConcreteParser implements Parser<Data> {
 	public Data parse(String filename) {
 		// TODO Auto-generated method stub
 		File file = new File(filename);
+		
+		if (!file.exists())
+			error();
+		
 		BufferedReader reader = null;
 		int[][] array = null;
 		int count = 0;
