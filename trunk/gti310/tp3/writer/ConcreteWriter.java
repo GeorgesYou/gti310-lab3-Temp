@@ -1,5 +1,5 @@
 /******************************************************
- Laboratoire #3 : Résolution de graph
+ Laboratoire #3 : Résolution de graphe
  
  Cours :             GTI310
  Session :           Automne 2010
