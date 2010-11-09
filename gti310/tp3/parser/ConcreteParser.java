@@ -90,7 +90,13 @@ public class ConcreteParser implements Parser<Data> {
         {e.printStackTrace();}
 		
 		if (array[2][0]==-1)
-			array[2][0]=array[3][0];
+		{
+			int min = array[3][0];
+			for (int i=0;i<count-3;i++)
+				if (array[i+3][0]<min)
+					min=array[i+3][0];
+			array[2][0]=min;
+		}
 		
 		int[][] links = new int[count-3][3];
 		for (int i=0;i<count-3;i++)
